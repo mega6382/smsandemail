@@ -1,0 +1,25 @@
+<?php
+$title = 'My Music';
+$this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <p>
+     <a href="<?php echo $this->url('music', array('action'=>'add'));?>">Add new music</a>
+ </p>
+
+ <table class="table">
+ <tr>
+     <th>Name</th>
+     <th>File</th>
+     <th>&nbsp;</th>
+ </tr>
+ <?php foreach ($musics as $music) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($music->name);?></td>
+     <td><?php echo $this->escapeHtml($music->file);?></td>
+     <td>
+     </td>
+ </tr>
+ <?php endforeach;?>
+ 
+ </table>

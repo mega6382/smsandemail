@@ -1,0 +1,34 @@
+<?php
+$title = 'My Coupons';
+$this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <p>
+     <a href="<?php echo $this->url('coupon', array('action'=>'add'));?>">Add new coupon</a>
+ </p>
+
+ <table class="table">
+ <tr>
+     <th>Total</th>
+     <th>Cashed</th>
+     <th>Valid From</th>
+     <th>Valid Till</th>
+     <th>Description</th>
+     <th>&nbsp;</th>
+ </tr>
+ <?php foreach ($coupons as $coupon) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($coupon->total);?></td>
+     <td><?php echo $this->escapeHtml($coupon->cashed);?></td>
+     <td><?php echo $this->escapeHtml($coupon->valid_from);?></td>
+     <td><?php echo $this->escapeHtml($coupon->valid_till);?></td>
+     <td><?php echo $this->escapeHtml($coupon->desc);?></td>
+     <td>
+         <a href="<?php echo $this->url('coupon',
+             array('action'=>'edit', 'id' => $coupon->id));?>">Edit</a>
+         <a href="<?php echo $this->url('coupon',
+             array('action'=>'delete', 'id' => $coupon->id));?>">Delete</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>

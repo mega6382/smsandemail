@@ -1,0 +1,16 @@
+<?php
+$title = 'SEND SMS';
+echo 
+<<<EOF
+
+   <style>
+    label {display:block;}
+    input {margin:10px !important;}
+   </style>
+
+EOF;
+echo $this->form()->openTag($form);
+echo $this->formCollection($form);
+echo $this->form()->closeTag();
+$this->headTitle($title);
+?>

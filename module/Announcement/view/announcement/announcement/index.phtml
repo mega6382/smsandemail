@@ -1,0 +1,32 @@
+<?php
+$title = 'My Announcements';
+$this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <p>
+     <a href="<?php echo $this->url('announcement', array('action'=>'add'));?>">Add new announcement</a>
+ </p>
+
+ <table class="table">
+ <tr>
+     <th>Announcements</th>
+     <th>Valid From</th>
+     <th>Valid Till</th>
+     <th>Description</th>
+     <th>&nbsp;</th>
+ </tr>
+ <?php foreach ($announcements as $announcement) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($announcement->announcement);?></td>
+     <td><?php echo $this->escapeHtml($announcement->valid_from);?></td>
+     <td><?php echo $this->escapeHtml($announcement->valid_till);?></td>
+     <td><?php echo $this->escapeHtml($announcement->desc);?></td>
+     <td>
+         <a href="<?php echo $this->url('announcement',
+             array('action'=>'edit', 'id' => $announcement->id));?>">Edit</a>
+         <a href="<?php echo $this->url('announcement',
+             array('action'=>'delete', 'id' => $announcement->id));?>">Delete</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>

@@ -1,0 +1,41 @@
+<?php
+$title = 'SEND EMAIL';
+?>
+   <style>
+    label {display:block;}
+    input {margin:10px !important;}
+    .template_heads {}
+    .template_heads div {display:inline;}
+    .template_heads div img {cursor: pointer;}
+   </style>
+   <div class="template_heads">
+   <div><img src="/img/template_heads/master.png" id="master" width="100px" /></div>
+   <div><img src="/img/template_heads/minty.jpg" id="minty" width="100px" /></div>
+   <div><img src="/img/template_heads/nexit.jpg" id="nexit" width="100px" /></div>
+   <div><img src="/img/template_heads/responsive.png" id="responsive" width="100px" /></div>
+   <div><img src="/img/template_heads/simples.png" id="simples" width="100px" /></div>
+   <div><img src="/img/template_heads/tempo.jpg" id="tempo" width="100px" /></div>
+   <div><img src="/img/template_heads/tubor.jpg" id="tubor" width="100px" /></div>
+   <div><img src="/img/template_heads/underscore.jpg" id="underscore" width="100px" /></div>
+   <div><img src="/img/template_heads/wooshi.jpg" id="wooshi" width="100px" /></div>
+   </div>
+<?php
+echo $this->form()->openTag($form);
+echo $this->formCollection($form);
+echo $this->form()->closeTag();
+$this->headTitle($title);
+    $this->CKEditor(
+    'body',
+        array('width' => "80%",
+            'height' => "300",
+            'uiColor'=> '#F4F4F4',
+     ));
+?>
+
+<script type="text/javascript" src="/js/email.js"></script>
+<script type="text/javascript">
+   $(document).ready(function() 
+   {
+     tempclicks();
+   });    
+</script>

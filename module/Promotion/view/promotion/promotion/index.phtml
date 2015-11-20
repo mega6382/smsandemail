@@ -1,0 +1,25 @@
+<?php
+$title = 'My Promotion';
+$this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <p>
+     <a href="<?php echo $this->url('Promotion', array('action'=>'add'));?>">Add new Promotion</a>
+ </p>
+
+ <table class="table">
+ <tr>
+     <th>Name</th>
+     <th>File</th>
+     <th>&nbsp;</th>
+ </tr>
+ <?php foreach ($Promotions as $Promotion) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($Promotion->name);?></td>
+     <td><?php echo $this->escapeHtml($Promotion->file);?></td>
+     <td>
+     </td>
+ </tr>
+ <?php endforeach;?>
+ 
+ </table>

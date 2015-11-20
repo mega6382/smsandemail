@@ -1,0 +1,23 @@
+<?php
+ $title = 'Verify Coupon';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+ <?php
+ $url = $this->url('coupon', array(
+     'action' => 'verify',
+ ));
+ ?>
+ <form action="<?php echo $url; ?>" method="post">
+ <div>
+     <?php
+     echo "<input type=\"text\" name=\"coupon_id\" value=\"{$request->getPost('coupon_id')}\" />";
+     ?>
+     <input type="submit" />
+ </div>
+ </form>
+ <?php
+ echo $result;
+  echo '<br/>';
+ ?>
